@@ -1,0 +1,54 @@
+CREATE TABLE twitter (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    tweet TEXT);
+    
+INSERT INTO twitter (title, tweet)
+    VALUES ("I'm hungry", "I think I'll make myself a pb&j");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Cashapp", "I wonder if they'll notice me this time $klc123456"); 
+INSERT INTO twitter (title, tweet)
+    VALUES ("Music Mondays", "August 10 by Khruangbin");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Motivation", "I have a couple projects left in my portfolio but I'm halfway to the end!");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Dumplings", "I love all things that are stuffed into pockets of dough");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Happy", "I'm in a very good place");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Boba Tea Order", "Mango green tea with honey boba and lychee jelly please!");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Cooking", "Should I make creme brulee or homemade icecream for dessert tonight?");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Shoes", "I'm completely obsessed with those Nike Dunks in 'Ocean'");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Musical Legends", "Patti Labelle is a national treasure");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Thai Desserts", "Whoever created mango sticky rice deserves a Nobel Peace Prize");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Electric Guitar", "Today I managed to learn the bridge of Doja Cat's Need To Know!");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Hashtag Loser", "I can't stop thinking of Phaedra from RHOA saying loser! lol");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Meme Queen", "I hope Wendy Williams is doing well");
+INSERT INTO twitter (title, tweet)
+    VALUES ("Thanksgiving fueds", "Sweet Potato Pie vs. Pumpkin Pie? Hmmmm");
+
+SELECT * FROM twitter;
+
+ALTER TABLE twitter ADD emoji TEXT;
+
+SELECT * FROM twitter;
+
+UPDATE twitter SET emoji = "hungry" WHERE id = 1;
+UPDATE twitter SET emoji = "money bag" WHERE id = 2;
+UPDATE twitter SET emoji = "heart eyes" WHERE id = 3;
+UPDATE twitter SET emoji = "inspired" WHERE id = 4;
+UPDATE twitter SET emoji = "drool face" WHERE id = 5;
+
+SELECT * FROM twitter;
+
+DELETE FROM twitter WHERE id = 8;
+DELETE FROM twitter WHERE id = 13;
+
+SELECT * FROM twitter;
