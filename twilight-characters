@@ -1,0 +1,77 @@
+/* Create table about the people and what they do here */
+CREATE TABLE twilight_characters (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER,
+    gender TEXT);
+
+INSERT INTO twilight_characters VALUES (1, "Bella Swan", 18, "female");
+INSERT INTO twilight_characters VALUES (2, "Charlie Swan", 45, "male");
+INSERT INTO twilight_characters VALUES (3, "Edward Cullen", 17, "male");
+INSERT INTO twilight_characters VALUES (4, "Jacob Black", 17, "male");
+INSERT INTO twilight_characters VALUES (5, "Alice Cullen", 19, "female");
+INSERT INTO twilight_characters VALUES (6, "Dr. Carlisle Cullen", 37, "male");
+INSERT INTO twilight_characters VALUES (7, "Esme Cullen", 35, "female");
+INSERT INTO twilight_characters VALUES (8, "Tanya Denali", 28, "female");
+INSERT INTO twilight_characters VALUES (9, "Emmett Cullen", 23, "male");
+INSERT INTO twilight_characters VALUES (10, "Rosalie Hale", 22, "female");
+INSERT INTO twilight_characters VALUES (11, "Jasper Hale", 20, "male");
+INSERT INTO twilight_characters VALUES (12, "Billy Black", 60, "male");
+INSERT INTO twilight_characters VALUES (13, "Renesemee Cullen", 5, "female");
+INSERT INTO twilight_characters VALUES (14, "Seth Clearwater", 15, "male");
+INSERT INTO twilight_characters VALUES (15, "Jessica Stanley", 17, "female");
+
+CREATE TABLE home_country (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_id INTEGER,
+    country TEXT);
+    
+INSERT INTO home_country (character_id, country) VALUES (1, "United States");
+INSERT INTO home_country (character_id, country) VALUES (2, "United States");
+INSERT INTO home_country (character_id, country) VALUES (3, "United States");
+INSERT INTO home_country (character_id, country) VALUES (4, "United States");
+INSERT INTO home_country (character_id) VALUES (5);
+INSERT INTO home_country (character_id, country) VALUES (6, "England");
+INSERT INTO home_country (character_id, country) VALUES (7, "United States");
+INSERT INTO home_country (character_id, country) VALUES (8, "Canada");
+INSERT INTO home_country (character_id, country) VALUES (9, "United States");
+INSERT INTO home_country (character_id, country) VALUES (10, "United States");
+INSERT INTO home_country (character_id, country) VALUES (11, "United States");
+INSERT INTO home_country (character_id, country) VALUES (12, "United States");
+INSERT INTO home_country (character_id, country) VALUES (13, "United States");
+INSERT INTO home_country (character_id, country) VALUES (14, "United States");
+INSERT INTO home_country (character_id, country) VALUES (15, "United States");
+
+CREATE TABLE married (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    spouse1_id INTEGER,
+    spouse2_id INTEGER);
+    
+INSERT INTO married (spouse1_id, spouse2_id) VALUES (1, 3);
+INSERT INTO married (spouse1_id, spouse2_id) VALUES (6, 7);
+INSERT INTO married (spouse1_id, spouse2_id) VALUES (5, 11);
+INSERT INTO married (spouse1_id, spouse2_id) VALUES (9, 10);
+
+SELECT * FROM twilight_characters;
+
+/*JOIN*/
+SELECT name, country 
+FROM twilight_characters
+JOIN home_country 
+ON character_id = twilight_characters.id
+WHERE gender = "male";
+
+/*LEFT OUTER JOIN*/
+SELECT name, age, gender, country 
+FROM twilight_characters
+LEFT OUTER JOIN home_country
+ON character_id = twilight_characters.id
+ORDER BY age;
+
+/*MULTIPLE JOINS*/
+SELECT a.name, b.name 
+FROM married
+JOIN twilight_characters a
+ON a.id = married.spouse1_id
+JOIN twilight_characters b
+ON b.id = married.spouse2_id;
