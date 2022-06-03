@@ -1,0 +1,26 @@
+CREATE TABLE my_store 
+  (id INTEGER PRIMARY KEY, 
+  garment TEXT, 
+  size TEXT, 
+  price INTEGER, 
+  location TEXT);
+  
+INSERT INTO my_store VALUES (1, "fendi shirt", "XL", 24.99, "Virginia Beach");
+INSERT INTO my_store VALUES (2, "balmain pants","S", 40.00, "Virginia Beach");
+INSERT INTO my_store VALUES (3, "fendi shirt", "XXL", 15.95, "Portsmouth");
+INSERT INTO my_store VALUES (4, "gucci flip flops","XS", 2.99, "Chesapeake");
+INSERT INTO my_store VALUES (5, "fendi shirt", "L", 20.89, "Norfolk");
+INSERT INTO my_store VALUES (6, "balmain pants", "XXL", 43.99, "Portsmouth"); 
+INSERT INTO my_store VALUES (7, "givenchy jacket", "S", 56.00, "Norfolk");
+INSERT INTO my_store VALUES (8, "balmain pants", "M", 41.95, "Hampton");
+INSERT INTO my_store VALUES (9, "givenchy jacket", "XXXL", 49.95, "Virginia Beach");
+INSERT INTO my_store VALUES (10, "balenciaga sneakers", "L", 35.00, "Suffolk");
+INSERT INTO my_store VALUES (11, "fendi shirt", "XL", 19.86, "Norfolk");
+INSERT INTO my_store VALUES (12, "balenciaga sneakers", "M", 46.77, "Hampton");
+INSERT INTO my_store VALUES (13, "balmain pants", "S", 74.00, "Norfolk");
+INSERT INTO my_store VALUES (14, "rainbow mules", "L", 5.00, "Virginia Beach");
+INSERT INTO my_store VALUES (15, "moncler coat", "XXL", 300.99, "Portsmouth");
+
+SELECT * FROM my_store ORDER BY price;
+
+SELECT SUM(price) FROM my_store;
